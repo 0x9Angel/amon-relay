@@ -163,7 +163,7 @@ you choose.
 
 ## Reporting a vulnerability
 
-Mail **crypto.app.organisation@proton.me**. Reports are handled as a priority and
+Mail **SoraCorporation@proton.me**. Reports are handled as a priority and
 there will be no legal action against anyone acting in good faith.
 
 No PGP key is published to date, so treat the mail as you would any other
