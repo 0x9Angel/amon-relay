@@ -54,7 +54,7 @@ if ($leftover.Count -gt 0) {
     if ($KeepKeys) { Write-Host "   Get-ChildItem '$Dir' -Exclude relay.key | Remove-Item -Recurse -Force" }
     else           { Write-Host "   Remove-Item '$Dir' -Recurse -Force" }
 } else {
-    Write-Host " Gotham relay UNINSTALLED."
+    Write-Host " Amon network relay UNINSTALLED."
     if ($KeepKeys) { Write-Host " Identity key kept at $Key (a reinstall reuses it)." }
 }
 Write-Host "============================================================"

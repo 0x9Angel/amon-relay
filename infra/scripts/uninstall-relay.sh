@@ -73,7 +73,7 @@ fi
 
 echo
 echo "============================================================"
-echo " Gotham relay UNINSTALLED."
+echo " Amon network relay UNINSTALLED."
 if [[ "$KEEP_KEYS" == "1" ]]; then
     echo " Identity key kept at $KEYFILE (a reinstall reuses it)."
 else

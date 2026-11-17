@@ -1,12 +1,18 @@
-# Gotham
+# The Amon network
 
 **A Sphinx/Loopix mixnet, in Rust.** Fixed-size packets, per-hop exponential
 delays, Poisson cover traffic, sealed sender, store-and-forward mailboxes with a
 possession proof, and a signed directory with k-of-n admission.
 
-Gotham is the anonymity network underneath [Crypto](#what-is-not-in-this-repo),
-an end-to-end encrypted messenger. **This repository is the network.** It is
-usable on its own: nothing here depends on the messenger.
+The Amon network is the anonymity network underneath
+[Amon Messenger](#what-is-not-in-this-repository), an end-to-end encrypted
+messenger. **This repository is the network.** It is usable on its own: nothing
+here depends on the messenger.
+
+Before version 2.5.0 the network was called Gotham and the messenger Crypto.
+Crates, programs, environment variables and folders keep those names, for
+example `crypto-gotham-relay`, `gotham-relay`, `GOTHAM_OPERATOR` and
+`/opt/gotham`.
 
 ---
 
@@ -176,17 +182,17 @@ Please give us a reasonable window to ship a fix before publishing.
 **AGPL-3.0-or-later**, or a separate commercial licence.
 
 The AGPL is deliberate: §13 closes the network-service loophole, so anyone who
-runs a modified Gotham as a service must offer their changes to its users. An
-anonymity network whose operators can quietly fork it into something else is not
-an anonymity network.
+runs a modified version of the Amon network software as a service must offer
+their changes to its users. An anonymity network whose operators can quietly
+fork it into something else is not an anonymity network.
 
 See [`LICENSE`](LICENSE). For commercial terms, mail the address above.
 
 ## What is *not* in this repository
 
-The **Crypto application** — the messenger client, its X3DH and Double Ratchet
+**Amon Messenger** — the messenger client, its X3DH and Double Ratchet
 implementation, the encrypted store, and the enterprise integrations — is a
-separate, proprietary product and is not published here.
+separate product and is not published here.
 
 That split is deliberate and stated plainly rather than blurred: the network is
 open so it can be inspected, extended and run by anyone, because a network

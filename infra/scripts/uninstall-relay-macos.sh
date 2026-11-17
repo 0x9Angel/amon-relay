@@ -27,7 +27,7 @@ fi
 
 echo
 echo "============================================================"
-echo " Gotham relay UNINSTALLED (launchd: $LABEL)."
+echo " Amon network relay UNINSTALLED (launchd: $LABEL)."
 [[ "$KEEP_KEYS" == "1" ]] && echo " Identity key kept at $KEYFILE (a reinstall reuses it)."
 echo
 echo " If you disabled sleep for the relay, you can re-enable it:"

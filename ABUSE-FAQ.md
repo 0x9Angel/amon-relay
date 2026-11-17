@@ -1,7 +1,7 @@
 # Abuse, complaints and legal requests
 
-For people running a Gotham relay who have been contacted by a hosting provider,
-a police force, or anyone else.
+For people running an Amon network relay who have been contacted by a hosting
+provider, a police force, or anyone else.
 
 **This is not legal advice.** It is a description of how the software works, so
 that you can answer accurately. For advice about your own situation in your own
@@ -12,13 +12,13 @@ at the end.
 
 ## First, the thing most complaints get wrong
 
-Gotham relays do **not** connect to the open internet on behalf of users. Not
-even the tier called `exit`.
+Amon network relays do **not** connect to the open internet on behalf of users.
+Not even the tier called `exit`.
 
 A Tor exit node fetches web pages, sends mail, and opens connections to
 third-party services, which is why its IP shows up in other people's abuse logs.
-A Gotham `exit` relay is the last hop *inside the Gotham network*: it hands the
-packet to another Gotham participant's mailbox and stops there.
+An Amon network `exit` relay is the last hop *inside the network*: it hands the
+packet to another participant's mailbox and stops there.
 
 So if you receive a complaint saying your server attacked a host, scanned a
 network, sent spam, or downloaded something, **your relay did not do that**. Either
@@ -46,9 +46,9 @@ for you than an inconvenient truth.
 
 > Hello,
 >
-> The server at <IP> runs a relay for Gotham, a privacy-preserving messaging
-> network. The service forwards fixed-size encrypted packets between nodes of
-> that network.
+> The server at <IP> runs a relay for the Amon network, a privacy-preserving
+> messaging network. The service forwards fixed-size encrypted packets between
+> nodes of that network.
 >
 > It does not open connections to third-party services on behalf of users, and
 > it does not act as a proxy or VPN exit to the public internet. It therefore
@@ -99,10 +99,10 @@ maintained gives users false confidence. If this changes it will be announced.
 
 ## Reporting abuse of the network itself
 
-If you believe Gotham is being used to harm someone, we want to know, and we
-will be honest about what we can do. The design means we cannot read messages or
-identify users. We can act on the parts we do control: the software, the
-directory, and relay admission. Open an issue, or mail
+If you believe the Amon network is being used to harm someone, we want to know,
+and we will be honest about what we can do. The design means we cannot read
+messages or identify users. We can act on the parts we do control: the software,
+the directory, and relay admission. Open an issue, or mail
 **SoraCorporation@proton.me** (the address in the root
 [README](README.md); the disclosure policy itself is not published in this
 mirror).

@@ -1,6 +1,6 @@
 # crypto-gotham-relay
 
-Standalone Gotham mixnet relay binary.
+Standalone relay binary of the Amon network.
 
 ## Build
 

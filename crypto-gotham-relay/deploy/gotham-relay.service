@@ -1,6 +1,6 @@
 
 [Unit]
-Description=Gotham mixnet relay
+Description=Amon network relay
 Documentation=https://gotham-protocol.org/docs/relay
 After=network-online.target
 Wants=network-online.target

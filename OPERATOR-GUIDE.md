@@ -1,4 +1,4 @@
-# Running a Gotham relay
+# Running an Amon network relay
 
 Read this before you install anything. It tells you what you are agreeing to
 operate, what it does and does not do, and what it costs you.
@@ -10,10 +10,10 @@ we want to hear about it.
 
 ## What a relay actually does
 
-A Gotham relay forwards fixed-size, layered-encrypted packets between other
-Gotham nodes. Each packet is 2048 bytes, always, whatever it carries. Your relay
-peels exactly one layer of encryption, learns the address of the next hop, and
-forwards it.
+An Amon network relay forwards fixed-size, layered-encrypted packets between
+other nodes of the Amon network. Each packet is 2048 bytes, always, whatever it
+carries. Your relay peels exactly one layer of encryption, learns the address of
+the next hop, and forwards it.
 
 **Your relay cannot read any message.** Message content is encrypted end to end
 between the two people talking, under keys your relay never sees. Peeling your
@@ -22,18 +22,19 @@ layer reveals routing information, not content.
 **Your relay does not connect to the open internet on anyone's behalf.** This is
 the single most important difference from a Tor exit node, and it is the reason
 the legal exposure is not comparable. Even the tier named `exit` is the last hop
-*inside Gotham*: it delivers to another Gotham participant's mailbox. It never
-fetches a web page, never sends mail, never opens a connection to a third-party
-service. Your IP address will not appear in someone else's abuse logs as the
-apparent source of their traffic, because your relay never talks to them.
+*inside the Amon network*: it delivers to another participant's mailbox. It
+never fetches a web page, never sends mail, never opens a connection to a
+third-party service. Your IP address will not appear in someone else's abuse
+logs as the apparent source of their traffic, because your relay never talks to
+them.
 
 ## What each tier sees
 
 | Tier | Sees | Does not see |
 |---|---|---|
-| `entry` | The IP of a Gotham user connecting to it | Who they are talking to, or what they said |
+| `entry` | The IP of an Amon network user connecting to it | Who they are talking to, or what they said |
 | `mix` | Only the previous and next relay | Any user IP, any content |
-| `exit` | The recipient's address inside Gotham | The sender's IP, or any content |
+| `exit` | The recipient's address inside the Amon network | The sender's IP, or any content |
 
 No single relay sees both ends **when a path can be built**. That is the point
 of the design, and it is also why one operator running several relays weakens

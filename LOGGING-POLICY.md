@@ -1,4 +1,4 @@
-# What a Gotham relay records
+# What an Amon network relay records
 
 This document is an inventory, not a promise. Every claim below was checked
 against the source in `crypto-gotham-relay/`. If you find a divergence, that is

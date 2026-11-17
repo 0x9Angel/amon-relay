@@ -1,7 +1,7 @@
 #Requires -RunAsAdministrator
 $ErrorActionPreference = "Stop"
 
-$Repo    = "0x9Angel/gotham-relay"
+$Repo    = "0x9Angel/amon-relay"
 $Token   = $env:GOTHAM_ENROLL_TOKEN
 $AuthUrl = if ($env:GOTHAM_AUTHORITY_URL) { $env:GOTHAM_AUTHORITY_URL } else { "http://144.24.205.188:8443" }
 $Tier    = if ($env:GOTHAM_TIER) { $env:GOTHAM_TIER } else { "mix" }
@@ -136,7 +136,7 @@ $settings  = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGo
 Unregister-ScheduledTask -TaskName "GothamRelay" -Confirm:$false -ErrorAction SilentlyContinue
 Register-ScheduledTask -TaskName "GothamRelay" -Action $action -Trigger $trigger `
     -Principal $principal -Settings $settings `
-    -Description "Gotham mixnet relay - auto-starts in the background at boot" | Out-Null
+    -Description "Amon network relay - auto-starts in the background at boot" | Out-Null
 
 Write-Host "[5/6] Firewall + start now..."
 if ($Mode -eq "direct") {
@@ -170,9 +170,9 @@ for ($i = 0; $i -lt 20; $i++) {
 Write-Host ""
 Write-Host "============================================================"
 if ($SeenBy -ge $QuorumNeeded) {
-    Write-Host " Gotham relay is LIVE and ENROLLED ($SeenBy authorities attest it)"
+    Write-Host " Amon network relay is LIVE and ENROLLED ($SeenBy authorities attest it)"
 } else {
-    Write-Host " Gotham relay installed - NOT usable by clients yet" -ForegroundColor Yellow
+    Write-Host " Amon network relay installed - NOT usable by clients yet" -ForegroundColor Yellow
     Write-Host " Attested by $SeenBy of the $QuorumNeeded authorities required."
     if ($SeenBy -gt 0) {
         Write-Host " It IS running and one authority sees it, but clients need a quorum,"
@@ -203,5 +203,5 @@ if ($Mode -eq "rendezvous") {
 }
 Write-Host ""
 Write-Host " Re-check enrollment at any time (a relay can drop out later):" -ForegroundColor Cyan
-Write-Host "   irm https://raw.githubusercontent.com/0x9Angel/gotham-relay/main/infra/scripts/diagnose-relay.ps1 | iex"
+Write-Host "   irm https://raw.githubusercontent.com/0x9Angel/amon-relay/main/infra/scripts/diagnose-relay.ps1 | iex"
 Write-Host "============================================================"

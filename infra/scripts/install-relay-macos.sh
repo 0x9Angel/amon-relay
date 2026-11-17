@@ -7,7 +7,7 @@ TIER="${GOTHAM_TIER:-mix}"
 PORT="${GOTHAM_PORT:-443}"
 OPERATOR="${GOTHAM_OPERATOR:-}"
 ENROLL_TOKEN="${GOTHAM_ENROLL_TOKEN:-}"
-REPO="0x9Angel/gotham-relay"
+REPO="0x9Angel/amon-relay"
 
 BIN=/usr/local/bin/gotham-relay
 STATE_DIR=/usr/local/var/gotham-relay
@@ -45,7 +45,7 @@ fi
 case "$(uname -m)" in
   arm64)  ASSET=gotham-relay-macos-aarch64 ;;
   x86_64)
-    echo "[!] No Intel (x86_64) macOS build is published for the Gotham relay."
+    echo "[!] No Intel (x86_64) macOS build is published for the Amon network relay."
     echo "    Apple Silicon binaries do not run on Intel Macs."
     echo "    Options:"
     echo "      - run the relay on a Linux host instead (install-relay.sh), or"
@@ -173,9 +173,9 @@ done
 echo
 echo "============================================================"
 if [[ "$ENROLLED" -eq 1 ]]; then
-    echo " Gotham relay is LIVE and ENROLLED ($SEEN_BY authorities attest it)"
+    echo " Amon network relay is LIVE and ENROLLED ($SEEN_BY authorities attest it)"
 else
-    echo " Gotham relay installed - NOT usable by clients yet"
+    echo " Amon network relay installed - NOT usable by clients yet"
     echo " Attested by $SEEN_BY of the $QUORUM_NEEDED authorities required."
     if [[ "$SEEN_BY" -gt 0 ]]; then
         echo " It IS running and one authority sees it, but clients need a quorum,"

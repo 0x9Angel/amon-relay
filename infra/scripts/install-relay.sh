@@ -10,7 +10,7 @@ COUNTRY="${GOTHAM_COUNTRY:-}"
 OPERATOR="${GOTHAM_OPERATOR:-}"
 ENROLL_TOKEN="${GOTHAM_ENROLL_TOKEN:-}"
 
-REPO="0x9Angel/gotham-relay"
+REPO="0x9Angel/amon-relay"
 case "$(uname -m)" in
   x86_64|amd64)  ASSET="gotham-relay-linux-x86_64" ;;
   aarch64|arm64) ASSET="gotham-relay-linux-aarch64" ;;
@@ -237,9 +237,9 @@ fi
 echo
 echo "============================================================"
 if [[ "$ENROLLED" -eq 1 ]]; then
-    echo " Gotham relay is LIVE and ENROLLED ($SEEN_BY/$QUORUM_NEEDED authorities)"
+    echo " Amon network relay is LIVE and ENROLLED ($SEEN_BY/$QUORUM_NEEDED authorities)"
 else
-    echo " Gotham relay installed — NOT usable by clients yet"
+    echo " Amon network relay installed — NOT usable by clients yet"
     echo " Attested by $SEEN_BY of the $QUORUM_NEEDED authorities required."
     if [[ "$SEEN_BY" -gt 0 ]]; then
         echo " It IS running and one authority sees it, but clients need a quorum,"
