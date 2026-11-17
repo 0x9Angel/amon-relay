@@ -9,9 +9,9 @@ The Amon network is the anonymity network underneath
 messenger. **This repository is the network.** It is usable on its own: nothing
 here depends on the messenger.
 
-Before version 2.5.0 the network was called Gotham and the messenger Crypto.
-Crates, programs, environment variables and folders keep those names, for
-example `crypto-gotham-relay`, `gotham-relay`, `GOTHAM_OPERATOR` and
+Before Amon Messenger 2.5.0, the network was called Gotham and the messenger
+Crypto. Crates, programs, environment variables and folders keep those names,
+for example `crypto-gotham-relay`, `gotham-relay`, `GOTHAM_OPERATOR` and
 `/opt/gotham`.
 
 ---
@@ -194,9 +194,8 @@ See [`LICENSE`](LICENSE). For commercial terms, mail the address above.
 implementation, the encrypted store, and the enterprise integrations — is a
 separate product and is not published here.
 
-That split is deliberate and stated plainly rather than blurred: the network is
-open so it can be inspected, extended and run by anyone, because a network
-nobody can audit is not one you should route sensitive traffic through. The
-application is the commercial product.
+The network is open so it can be inspected, extended and run by anyone,
+because a network nobody can audit is not one you should route sensitive
+traffic through.
 
 Copyright © 2026 0x9Angel.

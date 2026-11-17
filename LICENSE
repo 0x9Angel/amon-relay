@@ -10,7 +10,7 @@
  SCOPE
 ================================================================================
 
-This AGPL-3.0 license applies ONLY to the Gotham mixnet crates:
+This AGPL-3.0 license applies ONLY to the Amon network crates:
 
     crypto-gotham             (protocol library)
     crypto-gotham-relay       (relay daemon)
@@ -24,9 +24,9 @@ Each is dual-licensed. Its per-file SPDX header reads:
 You may use these crates under EITHER the AGPL-3.0-or-later (this file) OR the
 commercial license (see LICENSE-COMMERCIAL.md), at your choice.
 
-The Crypto application (crypto-proto, crypto-agent, crypto-store, crypto-tests,
-crypto-enterprise, crypto-licensor, crypto-admin, crypto-tauri) is NOT under
-the AGPL — it is proprietary. See LICENSE and LICENSE-PROPRIETARY.md.
+The Amon Messenger application (crypto-proto, crypto-agent, crypto-store,
+crypto-tests, crypto-enterprise, crypto-licensor, crypto-admin, crypto-tauri) is
+not part of this repository, and this file does not cover it.
 
 ================================================================================
  KEY CONSEQUENCE OF THE AGPL (network-use / "SaaS" clause)
@@ -34,9 +34,10 @@ the AGPL — it is proprietary. See LICENSE and LICENSE-PROPRIETARY.md.
 
 The AGPLv3 differs from the GPLv3 in one decisive way: running a MODIFIED
 version of the program to provide a service over a network counts as
-"conveying" it. Concretely, if you operate a modified Gotham relay, directory,
-or authority as a network service, you MUST offer the users of that service the
-complete corresponding source code of your modified version, under the AGPLv3.
+"conveying" it. Concretely, if you operate a modified Amon network relay,
+directory, or authority as a network service, you MUST offer the users of that
+service the complete corresponding source code of your modified version, under
+the AGPLv3.
 
 Running the UNMODIFIED official binaries imposes no source-disclosure
 obligation on you — you are simply running the program.
@@ -62,8 +63,9 @@ then the FSF-published text at the URL above is the governing text.
  HOW TO APPLY THE AGPL TO A DERIVED WORK
 ================================================================================
 
-If you fork the Gotham crates, keep the SPDX headers, keep this file, and add
-your own copyright line below the existing one. The standard per-file notice is:
+If you fork the Amon network crates, keep the SPDX headers, keep this file,
+and add your own copyright line below the existing one. The standard per-file
+notice is:
 
     <one line to give the program's name and a brief idea of what it does.>
     Copyright (C) <year>  <name of author>
