@@ -6,8 +6,11 @@ possession proof, and a signed directory with k-of-n admission.
 
 The Amon network is the anonymity network underneath
 [Amon Messenger](#what-is-not-in-this-repository), an end-to-end encrypted
-messenger. **This repository is the network.** It is usable on its own: nothing
-here depends on the messenger.
+messenger. **This repository holds its relay:** the source of the relay daemon,
+its installers, and the binaries attached to each release. The rest of the
+network's code, and its documentation, are in
+[0x9Angel/amon-network](https://github.com/0x9Angel/amon-network). Nothing here
+depends on the messenger.
 
 Before Amon Messenger 2.5.0, the network was called Gotham and the messenger
 Crypto. Crates, programs, environment variables and folders keep those names,
@@ -55,13 +58,13 @@ Read this before anything else.
   forging anything. What counts as proof that an operator is one has not been
   settled. If you are considering running a relay, this is the finding to ask
   about.
-- Some known limitations are structural and written down in
-  [`docs/README.md`](docs/README.md) rather than quietly omitted. One that used
-  to be listed here is no longer true and is corrected rather than quietly
-  dropped: β is **not** byte-identical between hops — it is re-randomised at
-  every hop, and a regression test covers every pair of hops. The defect that
-  was real there is narrower and different, and it is the reduced critical
-  finding above.
+- Some known limitations are structural and written down in the
+  [`docs/README.md`](https://github.com/0x9Angel/amon-network/blob/main/docs/README.md)
+  of amon-network rather than quietly omitted. One that used to be listed here
+  is no longer true and is corrected rather than quietly dropped: β is **not**
+  byte-identical between hops — it is re-randomised at every hop, and a
+  regression test covers every pair of hops. The defect that was real there is
+  narrower and different, and it is the reduced critical finding above.
 - **All three directory authorities are run by one person**, the author. The
   2-of-3 quorum stops a single key from forging the relay list; it does not stop
   a simultaneous seizure of all three hosts.
@@ -79,10 +82,16 @@ start with the limitations, not the features.
 
 ## What is in this repository
 
+The relay daemon, `crypto-gotham-relay`, is here, with its installers under
+[`infra/scripts/`](infra/scripts/) and the guides for operators listed under
+[Running a relay](#running-a-relay). The relay is one of the four crates of the
+network; the other three, and the workspace that builds them all, are in
+[0x9Angel/amon-network](https://github.com/0x9Angel/amon-network).
+
 | Crate | Role |
 |---|---|
 | `crypto-gotham` | Protocol core — Sphinx header, LIONESS payload, path selection, mailboxes, signed directory, enrollment |
-| `crypto-gotham-relay` | The relay daemon — QUIC + Noise XK transport, forwarding, cover traffic, rendezvous transport, SURB replies |
+| `crypto-gotham-relay` (here) | The relay daemon — QUIC + Noise XK transport, forwarding, cover traffic, rendezvous transport, SURB replies |
 | `crypto-gotham-directory` | Directory admission — k-of-n attestation, roster, gossip |
 | `crypto-gotham-authority` | Directory authority — signs the relay list, issues TURN credentials |
 
@@ -122,13 +131,21 @@ start with the limitations, not the features.
 - **Signed directory** with anti-rollback, and **k-of-n admission** so no single
   authority key controls the route set.
 
-The protocol notes are in [`docs/`](docs/), including the RFC for the rendezvous
-transport and the k-of-n admission design.
+The protocol notes are in the
+[`docs/`](https://github.com/0x9Angel/amon-network/tree/main/docs) folder of
+amon-network, including the RFC for the rendezvous transport and the k-of-n
+admission design.
 
 ## Build
 
+The relay depends on crates that are in
+[0x9Angel/amon-network](https://github.com/0x9Angel/amon-network), so it is built
+from that workspace:
+
 ```bash
-cargo build --release --workspace
+git clone https://github.com/0x9Angel/amon-network
+cd amon-network
+cargo build --release -p crypto-gotham-relay
 cargo test --workspace
 ```
 
@@ -148,8 +165,9 @@ your machine will hold, and what to do if someone comes asking:
   template for your hosting provider
 
 If you have a machine that stays on — a VPS, a home server, a Raspberry Pi — see
-also [`docs/running-a-cgnat-relay.md`](docs/running-a-cgnat-relay.md) and the
-installers in [`infra/scripts/`](infra/scripts/).
+also
+[`docs/running-a-cgnat-relay.md`](https://github.com/0x9Angel/amon-network/blob/main/docs/running-a-cgnat-relay.md)
+in amon-network, and the installers in [`infra/scripts/`](infra/scripts/).
 
 `GOTHAM_OPERATOR` is required and the installer refuses without it: an
 unlabelled relay is never selected by path selection, so it would burn your
