@@ -1,7 +1,7 @@
 
 [Unit]
 Description=Amon network relay
-Documentation=https://gotham-protocol.org/docs/relay
+Documentation=https://github.com/0x9Angel/amon-relay#readme
 After=network-online.target
 Wants=network-online.target
 
